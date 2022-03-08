@@ -29,9 +29,7 @@ class image_converter:
       self.cmd_pub.publish(self.vel)
       rate.sleep()
     self.image_sub = rospy.Subscriber("/camera/color/image_raw",Image,self.callback)
-    # self.theta1=0
-    # self.theta2=0
-    # self.theta3=0
+    
 
 
   def callback(self,data):
@@ -84,17 +82,7 @@ class image_converter:
 
       if 30 < theta and theta < 150:
         self.vel.angular.z = 0.9*(math.pi/2 * (90-theta)/90)
-      # elif 39<theta<40:
-      #     self.counter+=1
-
-      # if self.counter==40:
-      #     self.vel.angular.z = 0.9*(math.pi/2 * (90-80)/90)
-      #     self.counter1+=1
-
-    
-      # if self.counter1==10:
-      #     self.counter1=0
-      #     self.counter=0    
+      
 
 
         
