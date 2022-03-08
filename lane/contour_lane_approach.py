@@ -29,15 +29,7 @@ class send_it:
     image = cv2.bitwise_and(image, image, mask = mask)
 
     
-    # # HSV filter
-    # lower = np.array([0, 0, 200])
-    # upper = np.array([179, 30, 255])
-
-    # hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    # mask = cv2.inRange(hsv, lower, upper)
-    # image = cv2.bitwise_and(image,image, mask= mask)
-    # print('hello')
-
+    
     # ROI masking
     stencil = np.zeros_like(image[:,:,0])
     polygon = np.array([[0,480],[0,250], [200,50], [440,50],[640,250] , [640,480]])
